@@ -31,7 +31,7 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    DESTINATION ${GR_PYTHON_DIR}/ks1q
+    header_remover.py DESTINATION ${GR_PYTHON_DIR}/ks1q
 )
 
 ########################################################################
