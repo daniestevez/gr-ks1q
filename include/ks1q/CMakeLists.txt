@@ -22,5 +22,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/ks1q
+    fec_decoder.h DESTINATION include/ks1q
 )

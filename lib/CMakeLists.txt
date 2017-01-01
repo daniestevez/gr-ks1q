@@ -26,6 +26,7 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND ks1q_sources
+    fec_decoder_impl.cc
 )
 
 set(ks1q_sources "${ks1q_sources}" PARENT_SCOPE)
@@ -35,7 +36,7 @@ if(NOT ks1q_sources)
 endif(NOT ks1q_sources)
 
 add_library(gnuradio-ks1q SHARED ${ks1q_sources})
-target_link_libraries(gnuradio-ks1q ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+target_link_libraries(gnuradio-ks1q fec ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-ks1q PROPERTIES DEFINE_SYMBOL "gnuradio_ks1q_EXPORTS")
 
 if(APPLE)
@@ -53,26 +54,26 @@ GR_LIBRARY_FOO(gnuradio-ks1q RUNTIME_COMPONENT "ks1q_runtime" DEVEL_COMPONENT "k
 ########################################################################
 # Build and register unit test
 ########################################################################
-include(GrTest)
+#include(GrTest)
 
-include_directories(${CPPUNIT_INCLUDE_DIRS})
+#include_directories(${CPPUNIT_INCLUDE_DIRS})
 
-list(APPEND test_ks1q_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_ks1q.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_ks1q.cc
-)
+#list(APPEND test_ks1q_sources
+#    ${CMAKE_CURRENT_SOURCE_DIR}/test_ks1q.cc
+#    ${CMAKE_CURRENT_SOURCE_DIR}/qa_ks1q.cc
+#)
 
-add_executable(test-ks1q ${test_ks1q_sources})
+#add_executable(test-ks1q ${test_ks1q_sources})
 
-target_link_libraries(
-  test-ks1q
-  ${GNURADIO_RUNTIME_LIBRARIES}
-  ${Boost_LIBRARIES}
-  ${CPPUNIT_LIBRARIES}
-  gnuradio-ks1q
-)
+#target_link_libraries(
+#  test-ks1q
+#  ${GNURADIO_RUNTIME_LIBRARIES}
+#  ${Boost_LIBRARIES}
+#  ${CPPUNIT_LIBRARIES}
+#  gnuradio-ks1q
+#)
 
-GR_ADD_TEST(test_ks1q test-ks1q)
+#GR_ADD_TEST(test_ks1q test-ks1q)
 
 ########################################################################
 # Print summary

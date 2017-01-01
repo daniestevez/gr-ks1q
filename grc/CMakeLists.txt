@@ -18,5 +18,5 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    DESTINATION share/gnuradio/grc/blocks
+    ks1q_fec_decoder.xml DESTINATION share/gnuradio/grc/blocks
 )
