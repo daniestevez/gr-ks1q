@@ -25,6 +25,8 @@
 #include <gnuradio/io_signature.h>
 #include "fec_decoder_impl.h"
 
+#include <cstdio>
+
 extern "C" {
 #include <fec.h>
 }
