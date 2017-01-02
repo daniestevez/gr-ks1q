@@ -24,10 +24,8 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND ks1q_sources
-    fec_decoder_impl.cc
-)
+    )
 
 set(ks1q_sources "${ks1q_sources}" PARENT_SCOPE)
 if(NOT ks1q_sources)
@@ -36,7 +34,7 @@ if(NOT ks1q_sources)
 endif(NOT ks1q_sources)
 
 add_library(gnuradio-ks1q SHARED ${ks1q_sources})
-target_link_libraries(gnuradio-ks1q fec ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+target_link_libraries(gnuradio-ks1q ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-ks1q PROPERTIES DEFINE_SYMBOL "gnuradio_ks1q_EXPORTS")
 
 if(APPLE)
