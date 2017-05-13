@@ -1,14 +1,6 @@
 # gr-ks1q
 KS1-Q GNU Radio decoder
 
-You can find a complete receivers for KS-1Q
-using this software in [gr-satellites](https://github.com/daniestevez/gr-satellites).
+**THIS OOT MODULE HAS BEEN DEPRECATED**
 
-You need to install the following OOT modules:
-  * [gr-synctags](https://github.com/daniestevez/gr-synctags)
-  * [gr-csp](https://github.com/daniestevez/gr-csp)
-  * [gr-kiss](https://github.com/daniestevez/gr-kiss)
-  * [gr-libfec](https://github.com/daniestevez/gr-libfec)
-
-To test the decoders you can open the files in the `examples/` folder with
-`gnuradio-companion`.
+The contents of the module are now included in [gr-satellites](https://github.com/daniestevez/gr-satellites). Please install and use gr-satellites instead of this repository.
